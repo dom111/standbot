@@ -1,5 +1,5 @@
 import { SPREADSHEET_ID } from "./settings"
-import type { Log, SlackHandle, Spreadsheet, SpreadsheetRow, Timestamp } from "./types"
+import type { Log, SlackHandle, Spreadsheet, SpreadsheetRow, Timestamp } from "../types"
 
 /**
  * Opens the default spreadsheet.

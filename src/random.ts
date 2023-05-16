@@ -1,14 +1,6 @@
 import type { WeightedBag } from "./types";
 
 /**
-  * Takes a list and returns an element using a simplistic randomiser.
-  */
-export function selectAtRandom(list: Array<any>) {
-  return list[Math.floor(Math.random() * list.length)];
-}
-
-
-/**
  * Takes an object where values are probabilities between 0 and 1 and returns
  * a random key accounting for the probablity.
  */

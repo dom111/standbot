@@ -1,18 +1,28 @@
-import commonjs from "@rollup/plugin-commonjs"
 import typescript from '@rollup/plugin-typescript'
 
 export default [
   {
-    input: "./src/index.ts",
+    input: {
+      "bot": "./src/index.ts",
+      // TODO: Find a way to generate multiple outputs and preserve indivitual
+      // self containment. See https://github.com/rollup/rollup/issues/2756
+      // "tests/services": "./src/services.test.ts"
+    },
     output: {
-      file: "dist/bot.js",
+      dir: "dist",
       format: "esm",
-      name: "bot"
+      name: "bot",
+      banner: `/**
+ * CSO Slack Bot.
+ *
+ * Entry point: main
+ */
+
+`,
     },
     treeshake: false,
     plugins: [
       typescript(),
-      commonjs()
     ]
   }
 ]
