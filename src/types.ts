@@ -3,13 +3,10 @@ export type Timestamp = string
 export type LogRecord = [Timestamp, SlackHandle]
 export type Log = Array<LogRecord>
 
-/**
-  * Values are expected to be between 0 and 1.
-  */
+/** Values are expected to be between 0 and 1. */
 export type Probability = number
 
-/**
-  * For example:
+/** For example:
   *
   * ```
   * {

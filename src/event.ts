@@ -4,17 +4,14 @@ import type { Log, SlackHandle } from "./types"
 import { WeightedBag } from "./types"
 import { MemberCounters } from "./types"
 
-/**
-  * Number of weeks to consider from the log of events.
-  */
+/** Number of weeks to consider from the log of events. */
 const NUMBER_OF_WEEKS = 3
 
 export function isWorkingDay(date: Date): boolean {
   return ![0, 6].includes(date.getDay())
 }
 
-/**
-  * Computes the expected probability for each member based on the given
+/** Computes the expected probability for each member based on the given
   * counters.
   *
   * When all counters are 0, all probabilities are equal and set to 1.
@@ -31,8 +28,7 @@ export function computeProbabilities(memberCounters: MemberCounters): WeightedBa
   return Object.fromEntries(entries.map(mapper))
 }
 
-/**
-  * Picks a facilitator out of the given members.
+/** Picks a facilitator out of the given members.
   *
   * A facilitator should never be the same twice in a row and be picked
   * based on the previus few weeks of activity.
@@ -51,9 +47,7 @@ export function pickFacilitator(members: Array<SlackHandle>, log: Log, date: Dat
 }
 
 
-/**
-  * Creates a standup event.
-  */
+/** Creates a standup event. */
 export function createEvent(members: Array<SlackHandle>, log: Log, date: Date) {
   const facilitator = pickFacilitator(members, log, date)
   const message = `TEST @${facilitator} will be running today's standup`;

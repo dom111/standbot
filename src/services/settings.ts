@@ -9,9 +9,7 @@ export const BOT_NAME = getProperty("BOT_NAME")
 export const BOT_EMOJI = getProperty("BOT_EMOJI")
 
 
-/**
-  * Shorthand for accessing Google Script's settings service.
-  */
+/** Shorthand for accessing Google Script's settings service. */
 export function getProperty(propertyName: string) {
   return PropertiesService.getScriptProperties().getProperty(propertyName)
 }

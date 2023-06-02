@@ -1,9 +1,7 @@
 import type { Log, MemberCounters, SlackHandle } from "./types"
 
 
-/**
-  * Counts the times a _current_ member is present in the given log.
-  */
+/** Counts the times a _current_ member is present in the given log. */
 export function countByMember(log: Log, members: Array<SlackHandle>): MemberCounters {
   const baseline = Object.fromEntries(members.map(member => [member, 0]))
 

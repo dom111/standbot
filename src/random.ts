@@ -1,8 +1,7 @@
 import type { WeightedBag } from "./types";
 
-/**
- * Takes an object where values are probabilities between 0 and 1 and returns
- * a random key accounting for the probablity.
+/** Takes an object where values are probabilities between 0 and 1
+ * and returns a random key accounting for the probablity.
  */
 export function weightedRandom(bag: WeightedBag) {
   const values = Object.keys(bag)

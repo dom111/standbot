@@ -1,9 +1,7 @@
 import { BOT_EMOJI, BOT_NAME, SLACK_CHANNEL, SLACK_HOOK } from "./settings"
 import type { FetchOptions } from "../types"
 
-/**
-  * Composes and sends a message to Slack.
-  */
+/** Composes and sends a message to Slack. */
 export function sendMessage(message: string) {
   const payload = {
     channel: SLACK_CHANNEL,
