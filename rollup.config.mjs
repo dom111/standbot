@@ -1,9 +1,9 @@
-import typescript from '@rollup/plugin-typescript'
+import typescript from "@rollup/plugin-typescript";
 
 export default [
   {
     input: {
-      "bot": "./src/index.ts",
+      bot: "./src/index.ts",
       // TODO: Find a way to generate multiple outputs and preserve indivitual
       // self containment. See https://github.com/rollup/rollup/issues/2756
       // "tests/services": "./src/services.test.ts"
@@ -21,8 +21,6 @@ export default [
 `,
     },
     treeshake: false,
-    plugins: [
-      typescript(),
-    ]
-  }
-]
+    plugins: [typescript()],
+  },
+];
